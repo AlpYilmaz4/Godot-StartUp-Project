@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="StartUp Project"
-run/main_scene="uid://b4cqqmu23p8gw"
+run/main_scene="uid://ur56rat04nr0"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [input]
 

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckvdq87r1puk8"]
+
+[ext_resource type="Texture2D" uid="uid://csfhaaoq6frnj" path="res://Assets/End (Idle).png" id="1_5nbog"]
+[ext_resource type="Script" uid="uid://dgovhwb8cfb3w" path="res://scenes/finish.gd" id="1_07gpw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07gpw"]
+size = Vector2(34, 44)
+
+[node name="Finish" type="Area2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_07gpw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_07gpw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_5nbog")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
