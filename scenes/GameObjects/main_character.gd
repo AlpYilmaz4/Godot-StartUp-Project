@@ -5,6 +5,12 @@ const SPEED = 400.0
 const JUMP_VELOCITY = -900.0
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D #added by me
 
+func jump():
+	velocity.y = JUMP_VELOCITY + 300
+	
+func jump_side(x):
+	velocity.y = JUMP_VELOCITY + 300
+	velocity.x = x
 
 func _physics_process(delta: float) -> void:
 	#animations added by me

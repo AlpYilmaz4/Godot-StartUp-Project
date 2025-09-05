@@ -1,9 +1,9 @@
 [gd_scene load_steps=31 format=3 uid="uid://csxcbaaou6j6w"]
 
-[ext_resource type="Texture2D" uid="uid://owxfjm2b3a1j" path="res://Assets/Jump (32x32).png" id="1_48ufq"]
-[ext_resource type="Script" uid="uid://bnwnwsyows5xg" path="res://scenes/main_character.gd" id="1_ig48j"]
-[ext_resource type="Texture2D" uid="uid://vbujbnem04yx" path="res://Assets/Idle (32x32).png" id="2_ig48j"]
-[ext_resource type="Texture2D" uid="uid://cevnc2evlcfrk" path="res://Assets/Run (32x32).png" id="4_e6tc2"]
+[ext_resource type="Texture2D" uid="uid://owxfjm2b3a1j" path="res://Assets/Character/Main Character/Jump (32x32).png" id="1_48ufq"]
+[ext_resource type="Script" uid="uid://bnwnwsyows5xg" path="res://scenes/GameObjects/main_character.gd" id="1_ig48j"]
+[ext_resource type="Texture2D" uid="uid://vbujbnem04yx" path="res://Assets/Character/Main Character/Idle (32x32).png" id="2_ig48j"]
+[ext_resource type="Texture2D" uid="uid://cevnc2evlcfrk" path="res://Assets/Character/Main Character/Run (32x32).png" id="4_e6tc2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tqm6u"]
 atlas = ExtResource("2_ig48j")

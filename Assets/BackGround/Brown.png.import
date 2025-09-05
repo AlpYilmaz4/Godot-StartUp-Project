@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csfhaaoq6frnj"
-path="res://.godot/imported/End (Idle).png-580ab99cd40fcdac96299562c4ec326a.ctex"
+uid="uid://ncit55vhsioc"
+path="res://.godot/imported/Brown.png-f741ec36fcd7ca01e7f2a94fe0e1ecfa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/End (Idle).png"
-dest_files=["res://.godot/imported/End (Idle).png-580ab99cd40fcdac96299562c4ec326a.ctex"]
+source_file="res://Assets/BackGround/Brown.png"
+dest_files=["res://.godot/imported/Brown.png-f741ec36fcd7ca01e7f2a94fe0e1ecfa.ctex"]
 
 [params]
 
