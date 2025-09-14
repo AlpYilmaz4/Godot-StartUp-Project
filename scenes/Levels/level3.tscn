@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://chww8batwwjvl"]
+[gd_scene load_steps=18 format=3 uid="uid://chww8batwwjvl"]
 
 [ext_resource type="Script" uid="uid://tftpsnrkk8u7" path="res://scenes/GameObjects/game_manager.gd" id="1_rupth"]
 [ext_resource type="Texture2D" uid="uid://drcjxihpdg2nh" path="res://Assets/BackGround/Green.png" id="2_6qt4k"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://x7jyv0g25ev0" path="res://scenes/GameObjects/enemy.tscn" id="8_a114e"]
 [ext_resource type="Script" uid="uid://2whaxoie0emg" path="res://scenes/GameObjects/fall.gd" id="9_6qt4k"]
 [ext_resource type="Texture2D" uid="uid://b2qjxr887yc2t" path="res://Assets/GameObjects/heart.png" id="9_y1e0c"]
+[ext_resource type="Texture2D" uid="uid://ncit55vhsioc" path="res://Assets/BackGround/Brown.png" id="10_gi13k"]
 [ext_resource type="Script" uid="uid://berlq7nyujejh" path="res://scenes/Levels/pause.gd" id="11_4a7ko"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
@@ -34,8 +35,14 @@ texture = ExtResource("3_fh4ka")
 14:0/0 = 0
 15:0/0 = 0
 17:0/0 = 0
+17:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3, -8, -3)
+17:0/0/physics_layer_0/polygon_0/one_way = true
 18:0/0 = 0
+18:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3, -8, -3)
+18:0/0/physics_layer_0/polygon_0/one_way = true
 19:0/0 = 0
+19:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3, -8, -3)
+19:0/0/physics_layer_0/polygon_0/one_way = true
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
@@ -56,11 +63,14 @@ texture = ExtResource("3_fh4ka")
 14:1/0 = 0
 15:1/0 = 0
 17:1/0 = 0
-17:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.87774, -8, -3.0576)
+17:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3, -8, -3)
+17:1/0/physics_layer_0/polygon_0/one_way = true
 18:1/0 = 0
-18:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.87774, -8, -3.0576)
+18:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3, -8, -3)
+18:1/0/physics_layer_0/polygon_0/one_way = true
 19:1/0 = 0
-19:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.87774, -8, -3.0576)
+19:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3, -8, -3)
+19:1/0/physics_layer_0/polygon_0/one_way = true
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
@@ -74,8 +84,14 @@ texture = ExtResource("3_fh4ka")
 14:2/0 = 0
 15:2/0 = 0
 17:2/0 = 0
+17:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3, -8, -3)
+17:2/0/physics_layer_0/polygon_0/one_way = true
 18:2/0 = 0
+18:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3, -8, -3)
+18:2/0/physics_layer_0/polygon_0/one_way = true
 19:2/0 = 0
+19:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3, -8, -3)
+19:2/0/physics_layer_0/polygon_0/one_way = true
 0:4/0 = 0
 1:4/0 = 0
 2:4/0 = 0
@@ -223,6 +239,7 @@ hearts = [NodePath("../UI/Hearts/HBoxContainer/Heart"), NodePath("../UI/Hearts/H
 [node name="SceneObjects" type="Node" parent="."]
 
 [node name="BackGround" type="TextureRect" parent="SceneObjects"]
+visible = false
 texture_filter = 1
 offset_right = 2377.0
 offset_bottom = 693.0
@@ -300,6 +317,19 @@ script = ExtResource("9_6qt4k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/Fall"]
 shape = SubResource("WorldBoundaryShape2D_rupth")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="SceneObjects"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="SceneObjects/ParallaxBackground"]
+motion_mirroring = Vector2(64, 64)
+
+[node name="Sprite2D" type="Sprite2D" parent="SceneObjects/ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("10_gi13k")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2048, 2048)
 
 [node name="UI" type="CanvasLayer" parent="."]
 

@@ -1,8 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://csxcbaaou6j6w"]
+[gd_scene load_steps=39 format=3 uid="uid://csxcbaaou6j6w"]
 
 [ext_resource type="Texture2D" uid="uid://owxfjm2b3a1j" path="res://Assets/Character/Main Character/Jump (32x32).png" id="1_48ufq"]
 [ext_resource type="Script" uid="uid://bnwnwsyows5xg" path="res://scenes/GameObjects/main_character.gd" id="1_ig48j"]
+[ext_resource type="PackedScene" uid="uid://dl7vgbr1vg71f" path="res://scenes/GameObjects/particle.tscn" id="2_7sb4i"]
 [ext_resource type="Texture2D" uid="uid://vbujbnem04yx" path="res://Assets/Character/Main Character/Idle (32x32).png" id="2_ig48j"]
+[ext_resource type="Texture2D" uid="uid://ddes1e345uou6" path="res://Assets/Character/Main Character/Double Jump (32x32).png" id="3_2qegu"]
 [ext_resource type="Texture2D" uid="uid://cevnc2evlcfrk" path="res://Assets/Character/Main Character/Run (32x32).png" id="4_e6tc2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tqm6u"]
@@ -48,6 +50,30 @@ region = Rect2(288, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_qoi8n"]
 atlas = ExtResource("2_ig48j")
 region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sb4i"]
+atlas = ExtResource("3_2qegu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4rys"]
+atlas = ExtResource("3_2qegu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmgps"]
+atlas = ExtResource("3_2qegu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lq8x"]
+atlas = ExtResource("3_2qegu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ko4ux"]
+atlas = ExtResource("3_2qegu")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80mlh"]
+atlas = ExtResource("3_2qegu")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pvtuh"]
 atlas = ExtResource("1_48ufq")
@@ -143,6 +169,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_7sb4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4rys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmgps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8lq8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ko4ux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80mlh")
+}],
+"loop": true,
+"name": &"double_jumping",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_pvtuh")
 }],
 "loop": true,
@@ -197,11 +246,13 @@ size = Vector2(49.3333, 59.5)
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(0.9, 0.9)
 script = ExtResource("1_ig48j")
+particle = ExtResource("2_7sb4i")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_pvtuh")
+animation = &"double_jumping"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
